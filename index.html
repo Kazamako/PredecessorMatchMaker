@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Overprime MatchMaker</title>
+        <meta name="description" content="Overprime MatchMaker ver.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+    </head>
+<body>
+
+    <!-- Main Start -->
+   <div id="main">
+        <!-- Headder -->
+        <p id="header">Overprime MatchMaker</p>
+        <!-- Headder END -->
+
+        <!-- UserName & ELO List -->
+        <div>
+            <table border="1" align="center" id="userList">
+                <tr>
+                    <th style="width:350px">UserName</th>
+                    <th style="width:150px">ELO</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username1" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo1" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username2" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo2" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username3" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo3" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username4" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo4" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username5" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo5" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username6" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo6" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username7" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo7" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username8" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo8" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username9" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo9" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="username10" type="text" placeholder="UserName">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inputtxt">
+                            <input class="inputform" id="userelo10" type="tel" placeholder="ELO">
+                            <span class="focus_line"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- User & ELO List END -->
+
+        <!-- Get ELO Button -->
+        <!-- display:none-->
+        <div clss="buttonField" style="display:none">
+            <div class="buttonArea">
+                <p class="getelo">
+                    <a href="javascript:void(0)" onclick="getelo()">Get ELO</a>
+                </p>
+            </div>
+        </div>
+        <!-- Get ELO Button END -->
+
+        <!-- MatchMake Button -->
+        <div class="buttonField">
+            <div class="buttonArea">
+                <p class="make1">
+                    <a href="javascript:void(0)" onclick="randomMatch()">Random MatchMake</a>
+                </p>
+            </div>
+            <div class="buttonArea">
+                <p class="make1">
+                    <a href="javascript:void(0)" onclick="eloMatch()">ELO MatchMake</a>
+                </p>
+            </div>
+        </div>
+        <!-- MatchMake Button END -->
+
+        <!-- Output Area -->
+        <div class="outputArea">
+            <p><canvas id="preview"></canvas></p>
+            <p>▲　コピーして使用してください　▲</p>
+
+            <!-- Textarea display:none -->
+            <textarea id="kekka" readonly style="display:none"></textarea>
+        </div>
+        <!-- Output Area END -->
+        
+        <input id="acd-check1" class="acd-check" type="checkbox">
+        <label class="acd-label" for="acd-check1">▼　このツールについて</label>
+        <div class="acd-content">
+            <p>Overprime 交流戦用のチーム分けツールです。</p>
+            <p>チーム分け後は、画像をコピーしてDiscordに貼り付けるなどして使ってください。</p>
+            <hr>
+            <p>【Random MatchMake】は、完全ランダムにチーム分けされます。</p>
+            <p>レート無関係でチーム分けされますので、バランスが悪くなるかもしれません。</p>
+            <p>【ELO MatchMake】は、ある程度レートを考慮したチーム分けになります。</p>
+            <p>このボタンでは、入力されたELOに対して±5%の差が出ます。</p>
+            <p>表示されている数字が異なっていても仕様なので気にしないで下さい。</p>
+            <p>※レートの取得先が見つかったら本領発揮です。</p>
+        </div>
+
+        <div Style="height:30px"></div>
+
+    </div>
+    <!-- Main End-->
+
+<footer><center>Overprime MatchMaker / Kazamako <a href="https://github.com/Kazamako/OverprimeMatchMaker">(SourceCode)</a></center></footer>
+
+</body>
+</html>
