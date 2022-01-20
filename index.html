@@ -6,6 +6,7 @@
         <meta name="description" content="Overprime MatchMaker ver.0">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="main.js"></script>
     </head>
 <body>
@@ -16,8 +17,6 @@
         <p id="header">Overprime MatchMaker</p>
         <!-- Headder END -->
 
-        <div id="text"> 	
-            <script src="feed.js"></script></div>
         <!-- UserName & ELO List -->
         <div>
             <table border="1" align="center" id="userList">
@@ -178,10 +177,10 @@
 
         <!-- Get ELO Button -->
         <!-- display:none-->
-        <div clss="buttonField" style="display:none">
+        <div clss="buttonField"">
             <div class="buttonArea">
                 <p class="getelo">
-                    <a href="javascript:void(0)" onclick="getelo()">Get ELO</a>
+                    <a id="gelo" href="javascript:void(0)" onclick="getelo()">Get ELO</a>
                 </p>
             </div>
         </div>

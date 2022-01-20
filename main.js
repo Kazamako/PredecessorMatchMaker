@@ -231,3 +231,20 @@ function padd(val) {
     } 
     return val.substr(0,len);
 }
+
+
+$(function(){
+  $("#gelo").on("click", function(event){
+    let id = $("#userelo1").val();
+    $.ajax({
+      type: "POST",
+      url: "https://reshtml.herokuapp.com/",
+      data: { "id" : id },
+      dataType : "json"
+    }).done(function(data){
+      alert(data)
+    }).fail(function(XMLHttpRequest, status, e){
+      alert(e);
+    });
+  });
+});
