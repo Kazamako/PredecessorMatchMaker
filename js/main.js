@@ -239,8 +239,8 @@ $(function(){
     $.ajax({
       type: "GET",
       url: "https://reshtml.herokuapp.com/",
-      data: { "id" : id },
-      dataType : "json"
+      data: { "id" : id }
+      //,dataType : "json"
     }).done(function(data){
       alert(data)
     }).fail(function(XMLHttpRequest, status, e){
