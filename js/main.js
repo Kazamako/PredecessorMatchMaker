@@ -84,14 +84,14 @@ function randomMatch(){
 
   // テキスト版のチーム分けも更新（非表示）
   document.getElementById("kekka").value =
-    "Aチーム aveELO : " + alphaELO + "\n" +
+    "Aチーム ave : " + alphaELO + "\n" +
     padd(randomlist[0][1]) + " : " + randomlist[0][0] + "\n" + 
     padd(randomlist[1][1]) + " : " + randomlist[1][0] + "\n" + 
     padd(randomlist[2][1]) + " : " + randomlist[2][0] + "\n" + 
     padd(randomlist[3][1]) + " : " + randomlist[3][0] + "\n" + 
     padd(randomlist[4][1]) + " : " + randomlist[4][0] + "\n" + 
     "―――――――――――――――――――――" + "\n" +
-    "Bチーム aveELO : " + bravoELO + "\n" +
+    "Bチーム ave : " + bravoELO + "\n" +
     padd(randomlist[5][1]) + " : " + randomlist[5][0] + "\n" + 
     padd(randomlist[6][1]) + " : " + randomlist[6][0] + "\n" + 
     padd(randomlist[7][1]) + " : " + randomlist[7][0] + "\n" + 
@@ -129,7 +129,7 @@ function eloMatch(){
 
     // ELOにプラマイX%の差を付ける
     //var ELORANDOM = 0.05;
-    ELORANDOM = 0;
+    var ELORANDOM = 0;
     for (var i = 0; i < randomELOUserList.length; i++){
       var plusflg = Math.floor(Math.random()*2);
       var plusnum = Math.floor(Math.random()*Number(randomELOUserList[i][1])*ELORANDOM);
@@ -204,6 +204,23 @@ function eloMatch(){
       y = y + 30;
     }
   }
+
+  // テキスト版のチーム分けも更新（非表示）
+  var textkekka = "";
+  textkekka = "Aチーム ave : " + alphaELO + "\n";
+  for(var i = 0; i < goodTeamList.length; i++){
+    if(goodTeamList[i] == 0){
+      textkekka = textkekka + padd(userlist[i][1]) + " : " + userlist[i][0] + "\n";
+    }
+  }
+  textkekka = textkekka + "―――――――――――――――――――――" + "\n";
+  textkekka = textkekka + "Bチーム ave : " + bravoELO + "\n";
+  for(var i = 0; i < goodTeamList.length; i++){
+    if(goodTeamList[i] == 1){
+      textkekka = textkekka + padd(userlist[i][1]) + " : " + userlist[i][0] + "\n";
+    }
+  }
+  document.getElementById("kekka").value = textkekka
 }
 
 
