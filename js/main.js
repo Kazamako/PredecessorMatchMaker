@@ -252,18 +252,11 @@ async function getelo(){
       [document.getElementById("username9").value],
       [document.getElementById("username10").value],
     ];
-    userelo = [
-      [document.getElementById("userelo1").value],
-      [document.getElementById("userelo2").value],
-      [document.getElementById("userelo3").value],
-      [document.getElementById("userelo4").value],
-      [document.getElementById("userelo5").value],
-      [document.getElementById("userelo6").value],
-      [document.getElementById("userelo7").value],
-      [document.getElementById("userelo8").value],
-      [document.getElementById("userelo9").value],
-      [document.getElementById("userelo10").value],
-    ];
+    
+    for(var i = 0; i < userlist.length; i++){
+      var elementId = "userelo" + (i+1)
+      document.getElementById(elementId).value = "";
+    }
 
     for(var i = 0; i < userlist.length; i++){
       if(userlist[i] != ""){
