@@ -128,7 +128,8 @@ function eloMatch(){
     randomELOUserList = userlist;
 
     // ELOにプラマイX%の差を付ける
-    var ELORANDOM = 0.05;
+    //var ELORANDOM = 0.05;
+    ELORANDOM = 0;
     for (var i = 0; i < randomELOUserList.length; i++){
       var plusflg = Math.floor(Math.random()*2);
       var plusnum = Math.floor(Math.random()*Number(randomELOUserList[i][1])*ELORANDOM);
@@ -233,18 +234,63 @@ function padd(val) {
 }
 
 
-$(function(){
-  $("#gelo").on("click", function(event){
-    let id = $("#userelo1").val();
-    $.ajax({
-      type: "GET",
-      url: "https://reshtml.herokuapp.com/",
-      data: { "id" : id }
-      //,dataType : "json"
-    }).done(function(data){
-      alert(data)
-    }).fail(function(XMLHttpRequest, status, e){
-      alert(e);
-    });
+async function getelo(){
+    //ELOが入力されている場合はスキップ
+    let checkELO = "";
+    let userid = "";
+    var ELO = "";
+
+    userlist = [
+      [document.getElementById("username1").value],
+      [document.getElementById("username2").value],
+      [document.getElementById("username3").value],
+      [document.getElementById("username4").value],
+      [document.getElementById("username5").value],
+      [document.getElementById("username6").value],
+      [document.getElementById("username7").value],
+      [document.getElementById("username8").value],
+      [document.getElementById("username9").value],
+      [document.getElementById("username10").value],
+    ];
+    userelo = [
+      [document.getElementById("userelo1").value],
+      [document.getElementById("userelo2").value],
+      [document.getElementById("userelo3").value],
+      [document.getElementById("userelo4").value],
+      [document.getElementById("userelo5").value],
+      [document.getElementById("userelo6").value],
+      [document.getElementById("userelo7").value],
+      [document.getElementById("userelo8").value],
+      [document.getElementById("userelo9").value],
+      [document.getElementById("userelo10").value],
+    ];
+
+    for(var i = 0; i < userlist.length; i++){
+      if(userlist[i] != ""){
+        ELO = await getELOfromOmeda(userlist[i]);
+        //ELOが取得できていれば入力
+        if(ELO){
+          var elementId = "userelo" + (i+1)
+          document.getElementById(elementId).value = ELO;
+        }
+      }
+    }
+};
+
+
+async function getELOfromOmeda(id){
+  let apiId = "https://omeda.city/players.json?page=1&filter[name]=" + id + "&filter[include_inactive]";
+  var ELO = "ERR"
+  await $.ajax({
+    type: "GET",
+    url: apiId,
+    dataType: "json",
+  }).done(function(data){
+    let jsondata = JSON.stringify(data);
+    let parse = JSON.parse(jsondata);
+    ELO = Math.round(parse[0]["mmr"]);
+  }).fail(function(XMLHttpRequest, status, e){
+    alert(e);
   });
-});
+  return ELO
+}
