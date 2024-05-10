@@ -8,9 +8,15 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/garlic.js"></script>
     </head>
 <body>
 
+    <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
     <!-- Main Start -->
     <div id="main">
         <!-- Headder -->
@@ -18,169 +24,170 @@
         <!-- Headder END -->
 
         <!-- PlayerName & MMR List -->
-        <div>
-            <table border="1" align="center" id="userList">
-                <tr>
-                    <th style="width:350px">PlayerName</th>
-                    <th style="width:150px">MMR</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username1" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo1" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username2" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo2" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username3" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo3" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+        <form data-persist="garlic" method="post">
+            <div>
+                <table border="1" align="center" id="userList">
+                    <tr>
+                        <th style="width:350px">PlayerName</th>
+                        <th style="width:150px">MMR</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username1" class="inputform" id="username1" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo1" class="inputform" id="userelo1" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username2" class="inputform" id="username2" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo2" class="inputform" id="userelo2" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username3" class="inputform" id="username3" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo3" class="inputform" id="userelo3" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username4" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo4" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username4" class="inputform" id="username4" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo4" class="inputform" id="userelo4" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username5" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo5" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username5" class="inputform" id="username5" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo5" class="inputform" id="userelo5" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username6" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo6" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username6" class="inputform" id="username6" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo6" class="inputform" id="userelo6" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username7" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo7" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username7" class="inputform" id="username7" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo7" class="inputform" id="userelo7" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username8" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo8" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username8" class="inputform" id="username8" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo8" class="inputform" id="userelo8" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username9" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo9" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username9" class="inputform" id="username9" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo9" class="inputform" id="userelo9" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="username10" type="text" placeholder="PlayerName">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="inputtxt">
-                            <input class="inputform" id="userelo10" type="tel" placeholder="MMR">
-                            <span class="focus_line"></span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                    <tr>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="username10" class="inputform" id="username10" type="text" placeholder="PlayerName">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inputtxt">
+                                <input name="userelo10" class="inputform" id="userelo10" type="tel" placeholder="MMR">
+                                <span class="focus_line"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
         <!-- PlayerName & MMR List END -->
 
         <!-- Get MMR Button -->
-        <!-- display:none-->
         <div class="buttonField">
             <div class="buttonArea">
                 <p class="getelo">
-                    <a id="gelo" href="javascript:void(0)" onclick="getelo()">Get MMR(Omeda.city)</a>
+                    <a id="gelo" href="javascript:void(0)" onclick="getelo()">&emsp;Get MMR(Omeda.city)</a>
                 </p>
             </div>
         </div>
@@ -204,29 +211,51 @@
         <!-- Output Area -->
         <div class="outputArea">
             <p><canvas id="preview"></canvas></p>
+
             <p>▲　いずれかをコピーして使用してください　▼</p>
 
-            <!-- Textarea display:none -->
-            <!-- <textarea id="kekka" readonly style="display:none"></textarea>　-->
-            <textarea id="kekka" readonly style="background:#333; border-color:black; color: white;"></textarea>
+            <!-- Textarea -->
+            <textarea id="kekka" readonly></textarea>
         </div>
         <!-- Output Area END -->
         <div Style="height:30px"></div>
         
+        <details>
+            <summary id="acd-check1" class="acd-label">▼　このツールについて</summary>
+            <div class="acd-content">
+                <p>Predecessor 交流戦用のチーム分けツールです。</p>
+                <p>チーム分け後は、画像をコピーしてDiscordに貼り付けるなどして使ってください。</p>
+                <hr>
+                <p>MMRは<a href="https://omeda.city/players">Omeda.city</a>から取得しています。</p>
+                <p>【！】同名のプレイヤーが存在する場合、正しいMMRが取得されない場合があります。</p>
+                <p>【！】(恐らく)PSユーザはOmeda.cityの名前が「user-XXX」となります。</p>
+                <p>【！】PLACEMENTの人は数値が取得できませんので、手動で入力してください。</p>
+                <hr>
+                <p>【Random MatchMake】は、完全ランダムにチーム分けされます。</p>
+                <p>レート無関係でチーム分けされますので、バランスが悪くなるかもしれません。</p>
+                <p>【MMR MatchMake】は、ある程度レートを考慮したチーム分けになります。</p>
+                <p> ※チームをランダムにするため、ベストの振り分けにはしていません</p>
+            </div>
+        </details>
+  
+  <!--
         <input id="acd-check1" class="acd-check" type="checkbox">
         <label class="acd-label" for="acd-check1">▼　このツールについて</label>
         <div class="acd-content">
             <p>Predecessor 交流戦用のチーム分けツールです。</p>
             <p>チーム分け後は、画像をコピーしてDiscordに貼り付けるなどして使ってください。</p>
             <hr>
+            <p>MMRは<a href="https://omeda.city/players">Omeda.city</a>から取得しています。</p>
+            <p>【！】同名のプレイヤーが存在する場合、正しいMMRが取得されない場合があります。</p>
+            <p>【！】(恐らく)PSユーザはOmeda.cityの名前が「user-XXX」となります。</p>
+            <p>【！】PLACEMENTの人は数値が取得できませんので、手動で入力してください。</p>
+            <hr>
             <p>【Random MatchMake】は、完全ランダムにチーム分けされます。</p>
             <p>レート無関係でチーム分けされますので、バランスが悪くなるかもしれません。</p>
             <p>【MMR MatchMake】は、ある程度レートを考慮したチーム分けになります。</p>
             <p> ※チームをランダムにするため、ベストの振り分けにはしていません</p>
-            <!-- <p>このボタンでは、入力されたELOに対して±5%の差が出ます。</p> 現在0%運用中 -->
-            <!-- <p>表示されている数字が異なっていても仕様なので気にしないで下さい。</p> -->
         </div>
-
+    -->
         <div Style="height:30px"></div>
 
     </div>

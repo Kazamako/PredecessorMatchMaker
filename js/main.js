@@ -13,7 +13,7 @@ window.onload = function(){
     canvas.width = bgImg.width;
     canvas.height = bgImg.height;
     ctx.drawImage(bgImg, 0, 0);
-}
+  }
 }
 
 // ランダムチーム分け
@@ -252,6 +252,9 @@ function padd(val) {
 
 
 async function getelo(){
+
+  $("#overlay").fadeIn(100);　
+  
     //ELOが入力されている場合はスキップ
     let checkELO = "";
     let userid = "";
@@ -285,6 +288,30 @@ async function getelo(){
         }
       }
     }
+
+    //1回フォーカスを当ててELOをローカルストレージに格納
+    input = document.getElementById("userelo1");
+    input.focus();
+    input = document.getElementById("userelo2");
+    input.focus();
+    input = document.getElementById("userelo3");
+    input.focus();
+    input = document.getElementById("userelo4");
+    input.focus();
+    input = document.getElementById("userelo5");
+    input.focus();
+    input = document.getElementById("userelo6");
+    input.focus();
+    input = document.getElementById("userelo7");
+    input.focus();
+    input = document.getElementById("userelo8");
+    input.focus();
+    input = document.getElementById("userelo9");
+    input.focus();
+    input = document.getElementById("userelo10");
+    input.focus();
+    $("#overlay").fadeOut(100);　
+
 };
 
 
